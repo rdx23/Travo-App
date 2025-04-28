@@ -97,7 +97,7 @@ app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
 app.get("/", (req, res) => {
-  res.render("layouts/boilerplate.ejs");
+  res.render("listings/index.ejs");
 });
 
 
