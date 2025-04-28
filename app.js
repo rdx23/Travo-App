@@ -96,6 +96,11 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+app.get("/", (req, res) => {
+  res.render("boilerplate.ejs");
+});
+
+
 // Error Handling Middleware
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong!!!!" } = err;
