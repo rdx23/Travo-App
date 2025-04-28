@@ -96,9 +96,9 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-// app.get("/", (req, res) => {
-//   res.render("");
-// });
+app.get("/", (req, res) => {
+  res.render("/listings");
+});
 
 
 // Error Handling Middleware
