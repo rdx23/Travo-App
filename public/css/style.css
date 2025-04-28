@@ -1,0 +1,194 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+
+ .hotel-link {
+    text-decoration: none; /* Removes underline */
+    color: black; /* Makes text black */
+  }
+
+  .hotel-link h2 {
+    font-size: 1.4rem; /* Adjust size for a modern look */
+    font-weight: 600; /* Slightly bold */
+     margin-left: -2px; /* Fine-tune spacing */
+  }
+
+.navbar-brand i {
+    font-size: 2.3rem; /* Reduce icon size slightly */
+  } 
+
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+  .list-property-btn {
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .list-property-btn:hover {
+    background-color: #f1f1f1 !important; /* Light grey hover effect */
+  }
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #222222;
+  height: 30%;
+}
+
+.f-links {
+  display: flex;
+  gap: 10px; /* This will add space between the links */
+}
+.f-links a {
+  text-decoration: none;
+  color: #222222;
+  /* margin: 10px 0px;
+  gap: 10px; */
+}
+.f-links a:hover {
+  text-decoration: underline;
+}
+.f-social i {
+  font-size: 18px;
+  color: #222222;
+  margin-left: 10px;
+}
+
+/* edit */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+  /* width: 277px !important;
+  
+  height: 263px 1 !important; */
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+.add-btn {
+  border: none !important;
+}
+
+/* show  */
+
+.btns {
+  display: flex;
+}
+
+.show-img {
+  height: 363px;
+  width: 546px;
+}
+
+
+    #filters {
+      display: flex;
+    }
+
+    /* Filter Items */
+    .filter {
+      text-align: center;
+      opacity: 0.7; /* Set default opacity */
+      transition: opacity 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+      cursor: pointer;
+      margin-right: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Icons */
+    .filter i {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Hover Effect */
+    .filter:hover {
+      opacity: 1; /* Full opacity on hover */
+      text-decoration: underline;
+    }
+
+    .filter p {
+      font-size:0.7rem;
+    }
+
+  
+
+       /* Underline Effect */
+    .filter::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 3px; /* Thicker underline */
+      background-color: black;
+      transition: width 0.3s ease-in-out;
+      margin: auto;
+    }
+
+      .filter:hover::after {
+      width: 100%; /* Expands underline smoothly */
+    }
+
+    .tax-toggle{
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    border: 1px solid grey;
+    padding: 1rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;  /* Slightly more rounded for a smoother look */
+
+    }
+
+    .tax-info{
+      display: none;
+      font-size: medium;
+    }

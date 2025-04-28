@@ -1,0 +1,125 @@
+<% layout("/layouts/boilerplate") %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg p-4 border-0 rounded">
+        <h2 class="text-center mb-4 fw-bold">Edit Your Hotel</h2>
+        
+        <form
+          action="/listings/<%= listing._id %>?_method=PUT"
+          method="POST"
+          class="needs-validation"
+          novalidate
+          enctype="multipart/form-data"
+        >
+          
+          <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="listing[title]"
+              class="form-control p-2 shadow-sm"
+              value="<%= listing.title %>"
+              required
+            />
+            <div class="invalid-feedback">Please enter the title</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label fw-bold">Description</label>
+            <textarea 
+              name="listing[description]" 
+              class="form-control p-2 shadow-sm"
+              rows="4"
+              required
+            ><%- listing.description.trim() %></textarea>
+            <div class="invalid-feedback">Please enter the description</div>
+          </div>
+
+          <!-- Display Original Image -->
+          <div class="mb-3 text-center">
+            <strong class="d-block mb-2">Original Image</strong>
+            <% if (originalImageUrl) { %>
+              <img src="<%= originalImageUrl %>" class="img-fluid rounded shadow" style="max-height: 250px; border: 2px solid #ddd;" alt="Hotel Image">
+            <% } else { %>
+              <p class="text-muted">No image available</p>
+            <% } %>
+          </div>
+
+          <div class="mb-3">
+            <label for="image" class="form-label fw-bold">Upload New Image</label>
+            <input
+              type="file"
+              id="image"
+              name="listing[image]"
+              class="form-control p-2 shadow-sm"
+            />
+          </div>  
+
+          <div class="row">
+            <div class="mb-3 col-md-4">
+              <label for="price" class="form-label fw-bold">Price</label>
+              <input
+                type="number"
+                id="price"
+                name="listing[price]"
+                value="<%= listing.price %>"
+                class="form-control p-2 shadow-sm"
+                required
+              />
+              <div class="invalid-feedback">Price should be valid</div>
+            </div>
+
+            <div class="mb-3 col-md-8">
+              <label for="country" class="form-label fw-bold">Country</label>
+              <input
+                type="text"
+                id="country"
+                name="listing[country]"
+                value="<%= listing.country %>"
+                class="form-control p-2 shadow-sm"
+                required
+              />
+              <div class="invalid-feedback">Country name should be valid</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label fw-bold">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="listing[location]"
+              value="<%= listing.location %>"
+              class="form-control p-2 shadow-sm"
+              required
+            />
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="category" class="form-label fw-bold">Category</label>
+            <input
+              type="text"
+              id="category"
+              name="listing[category]"
+              value="<%= listing.category %>"
+              class="form-control p-2 shadow-sm"
+              required
+            />
+            <div class="invalid-feedback">Category should be valid</div>
+          </div>
+
+          <button type="submit" class="btn btn-dark w-100 py-2 shadow-sm mt-3">
+            Edit Hotel
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/script.js"></script>

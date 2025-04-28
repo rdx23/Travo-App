@@ -1,0 +1,168 @@
+<% layout("/layouts/boilerplate") %>
+  <div class="row">
+    <div class="col-8 offset-3 mt-3 mb-2">
+      <h1>Hotel Details</h1>
+      </div>
+
+    <div class="card col-6 offset-3 mb-3 listing-card">
+      <img src="<%= listing.image.url %>" class="card-img-top show-img col-9" alt="listing_image" />
+      <div class="card-body">
+        <p class="card-text">
+          <i><%=  %> </i> <br>
+      <ul>
+      <li><strong>Title:</strong> <%= listing.title %></li>
+      <li><strong>Description:</strong> <%= listing.description %></li>
+      <li>
+        <strong>Price:</strong> &#8377; <%=
+        listing.price.toLocaleString("en-IN") %>
+      </li>
+      <li><strong>Location:</strong> <%= listing.location %></li>
+      <li><strong>Country:</strong> <%= listing.country %></li>
+        <li><strong>Owned by:</strong> <%= listing.owner.username %></li>
+        <li><strong>Category:</strong> <%= listing.category %></li>
+    </ul>
+        </p>
+      </div>
+    </div>
+
+    <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
+       <div class="btns mb-3 ">
+     <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-5">Edit</a>
+
+       <form
+      action="/listings/<%= listing._id %>?_method=DELETE"
+      method="POST">
+      <button class="btn btn-dark  offset-7">Delete</button>
+    </form>
+  </div>
+
+   <% } %>
+ 
+
+ <!-- Review Form -->
+    <div class=" mt-5 mb-3 col-md-6 mx-auto">
+    <hr>
+    <% if(currUser) { %>
+    <h3 class="mb-4">Leave a Review</h3>
+    <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
+        <!-- Comment -->
+        <div class="mb-3">
+            <label for="comment" class="form-label">Your Comment</label>
+            <textarea class="form-control" id="comment" name="review[comment]" rows="3" required></textarea>
+            <div class="invalid-feedback">Please enter some feedback for the review.</div>
+        </div> 
+
+        <!-- Rating -->
+         <div class="mb-3">
+            <label for="rating" class="form-label">Rating (1 to 5)</label>
+            <select class="form-select" id="rating" name="review[rating]" required>
+                <option value="" disabled selected>Select Rating</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+               
+            </select>
+            <div class="invalid-feedback">Please rate your experience.</div>
+        </div> 
+
+        <!-- Submit Button -->
+         <button type="submit" class="btn btn-outline-dark w-100">Submit Review</button>
+
+          <!-- // map -->
+    <div class=" mt-5">
+  <h3>Location Map</h3>
+  <div  id="map" style="height: 400px; width: 100%; border-radius: 10px;"></div>
+</div>
+    </form>
+
+
+    <script>
+  // Get Hotel Location Name from EJS
+  const locationName = "<%= listing.location %>";
+
+  async function getCoordinates(locationName) {
+    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationName)}`);
+    const data = await response.json();
+    if (data.length > 0) {
+      return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+    } else {
+      throw new Error('Location not found');
+    }
+  }
+
+  getCoordinates(locationName).then(coords => {
+    const map = L.map('map').setView([coords.lat, coords.lng], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const hotelMarker = L.marker([coords.lat, coords.lng])
+      .addTo(map)
+      .bindPopup("<b><%= listing.title %></b><br><%= listing.location %>")
+      .openPopup();
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+
+        const userMarker = L.marker([userLat, userLng], {icon: L.icon({iconUrl: 'https://cdn-icons-png.flaticon.com/512/64/64113.png', iconSize: [25, 41], iconAnchor: [12, 41]})})
+          .addTo(map)
+          .bindPopup("You are here!");
+
+        const group = L.featureGroup([hotelMarker, userMarker]);
+        map.fitBounds(group.getBounds(), { padding: [50, 50] });
+      });
+    }
+  }).catch(error => {
+    console.error('Error fetching coordinates:', error);
+  });
+</script>
+
+   <% } %>
+
+
+ 
+ 
+<% for (review of listing.reviews) { %>
+    <hr>
+   <p class="fw-bold fs-5">All Reviews</p>
+  <div class="card shadow-sm ms-3 mb-3">
+    <div class="card-body ">
+      <h5 class="card-title fw-bold d-flex align-items-center">
+        <i class="bi bi-person-circle me-2"></i> <%= review.author.username %>
+      </h5>
+      <p class="card-text text-warning ms-2">
+        <%= "⭐".repeat(review.rating) %>
+      </p>
+
+
+       <p class="card-text text-muted ml-2 ms-2">
+        <% if (review.comment.length > 100) { %>
+          <span class="short-comment"><%= review.comment.substring(0, 100) %>...</span>
+          <span class="full-comment d-none"><%= review.comment %></span>
+          <button class="see-more btn btn-link p-0">See More</button>
+        <% } else { %>
+          <%= review.comment %>
+        <% } %>
+      </p>
+
+<!-- Delete button (aligned properly) -->
+<form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST" class="mt-3">
+  <button class="btn btn-dark btn-sm ms-2 mb-2">Delete</button>
+</form>
+
+    </div>
+  </div>
+<% } %>
+</div> 
+  
+  </div>
+
+  
+
+
+<script src="/js/show.js"></script>

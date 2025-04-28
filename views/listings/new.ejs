@@ -1,0 +1,132 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg p-4 border-0 rounded">
+        <h2 class="text-center mb-4 fw-bold">🏰 Add a New Hotel</h2>
+
+        <form 
+          action="/listings" 
+          method="POST" 
+          novalidate 
+          class="needs-validation" 
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Hotel Name</label>
+            <input 
+              type="text" 
+              id="title" 
+              name="listing[title]" 
+              placeholder="Enter the hotel name" 
+              required 
+              class="form-control p-2 shadow-sm"
+            />
+            <div class="valid-feedback">Please enter the title</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label fw-bold">Description</label>
+            <textarea 
+              name="listing[description]" 
+              required 
+              class="form-control p-2 shadow-sm" 
+              id="description"
+              rows="4"
+              placeholder="Describe the hotel’s ambiance, facilities, etc."
+            ></textarea>
+            <div class="invalid-feedback">Please enter a description</div>
+          </div>
+
+          <!-- Image Upload with Preview -->
+          <div class="mb-3">
+            <label for="image" class="form-label fw-bold">Upload Image</label>
+            <input 
+              type="file" 
+              id="image" 
+              name="listing[image]" 
+              class="form-control p-2 shadow-sm" 
+              required 
+              accept="image/*"
+              onchange="previewImage(event)"
+            />
+            <div class="mt-3 text-center">
+              <img id="imagePreview" class="img-fluid rounded shadow" style="max-height: 250px; border: 2px solid #ddd; display: none;" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-md-4">
+              <label for="price" class="form-label fw-bold">Price (Per Night)</label>
+              <input 
+                type="number" 
+                id="price" 
+                name="listing[price]" 
+                placeholder="Enter the price"  
+                class="form-control p-2 shadow-sm"
+                required
+              />
+              <div class="invalid-feedback">Price should be valid</div>    
+            </div>
+
+            <div class="mb-3 col-md-8">
+              <label for="country" class="form-label fw-bold">Country</label>
+              <input 
+                type="text" 
+                id="country" 
+                name="listing[country]" 
+                placeholder="Enter the country" 
+                class="form-control p-2 shadow-sm" 
+                required
+              />
+              <div class="invalid-feedback">Country name should be valid</div>  
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label fw-bold">Location</label>
+            <input 
+              type="text" 
+              id="location" 
+              name="listing[location]" 
+              placeholder="Enter the exact location" 
+              class="form-control p-2 shadow-sm" 
+              required
+            />
+            <div class="invalid-feedback">Location should be valid</div> 
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label fw-bold">Category</label>
+            <select class="form-select" id="rating"  required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="1">1 - Beach</option>
+                <option value="2">2 - Mountain</option>
+                <option value="3">3 - City</option>
+                <option value="4">4 - Forest</option>
+                <option value="5">5 - Lake</option>  
+               <option value="6">6 - Castle</option> 
+            </select>
+            <div class="invalid-feedback">Please enter your category.</div>
+        </div>
+
+          <button type="submit" class="btn btn-dark w-100 py-2 shadow-sm mt-3">🏨 Add Hotel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image Preview Script -->
+<script>
+  function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const imgElement = document.getElementById('imagePreview');
+      imgElement.src = reader.result;
+      imgElement.style.display = 'block';
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
