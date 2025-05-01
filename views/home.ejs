@@ -1,4 +1,44 @@
 <% layout('layouts/boilerplate') %>
 
-<h1>Welcome to Travo!</h1>
-<p>This is your home page.</p>
+<header class="text-center my-5">
+  <h1 class="display-4 fw-bold">Welcome to Travo</h1>
+  <p class="lead">Discover your next adventure with Travo</p>
+</header>
+
+<section class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="/images/explore.jpg" class="card-img-top" alt="Explore Destinations">
+        <div class="card-body">
+          <h5 class="card-title">Explore Destinations</h5>
+          <p class="card-text">Find the most exciting places around the world to visit and make memories.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="/images/plan.jpg" class="card-img-top" alt="Plan Trips">
+        <div class="card-body">
+          <h5 class="card-title">Plan Your Trips</h5>
+          <p class="card-text">Easily plan your journey with custom listings, guides, and itineraries.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="/images/connect.jpg" class="card-img-top" alt="Connect with Travelers">
+        <div class="card-body">
+          <h5 class="card-title">Connect with Travelers</h5>
+          <p class="card-text">Share your experiences and connect with a community of explorers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="text-center my-5">
+  <a href="/listings" class="btn btn-primary btn-lg">Browse Listings</a>
+</div>
