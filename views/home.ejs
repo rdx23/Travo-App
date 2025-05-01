@@ -1,36 +1,65 @@
- <!-- <% layout('layouts/boilerplate') %> -->
+<style>
+  .card-img-top {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-black {
+    background-color: black;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-black:hover {
+    background-color: #333;
+    color: white;
+  }
+</style>
 
 <header class="text-center my-5">
   <h1 class="display-4 fw-bold">Welcome to Travo</h1>
   <p class="lead">Discover your next adventure with Travo</p>
 </header>
 
- <section class="container my-5">
+<section class="container my-5">
   <div class="row g-4">
     <div class="col-md-4">
       <div class="card h-100 shadow-sm">
-        <img src="/images/explore.jpg" class="card-img-top" alt="Explore Destinations">
-        <div class="card-body">
+        <img src="/images/explore.jpg" class="card-img-top" alt="Explore Destinations" />
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">Explore Destinations</h5>
           <p class="card-text">Find the most exciting places around the world to visit and make memories.</p>
         </div>
       </div>
     </div>
-    
+
     <div class="col-md-4">
       <div class="card h-100 shadow-sm">
-        <img src="/images/plan.jpg" class="card-img-top" alt="Plan Trips">
-        <div class="card-body">
+        <img src="/images/plan.jpg" class="card-img-top" alt="Plan Trips" />
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">Plan Your Trips</h5>
           <p class="card-text">Easily plan your journey with custom listings, guides, and itineraries.</p>
         </div>
       </div>
     </div>
-    
+
     <div class="col-md-4">
       <div class="card h-100 shadow-sm">
-        <img src="/images/travel.jpg" class="card-img-top" alt="Connect with Travelers">
-        <div class="card-body">
+        <img src="/images/travel.jpg" class="card-img-top" alt="Connect with Travelers" />
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">Connect with Travelers</h5>
           <p class="card-text">Share your experiences and connect with a community of explorers.</p>
         </div>
@@ -40,5 +69,5 @@
 </section>
 
 <div class="text-center my-5">
-  <a href="/listings" class="btn btn-black btn-lg">Browse Listings</a>
-</div> 
+  <a href="/listings" class="btn btn-black">Browse Listings</a>
+</div>
