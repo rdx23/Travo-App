@@ -23,34 +23,56 @@
 Below are the screenshots of all main pages:
 
 ### 🏠 Home Page  
-<img src="screenshots/home.png" alt="Home Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/home.png" alt="Home Page" width="400" />
+
+<br>
 
 ### 📋 Listings Page  
-<img src="screenshots/listings.png" alt="Listings Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/listings.png" alt="Listings Page" width="400" />
+
+<br>
 
 ### 🧾 Details Page  
-<img src="screenshots/details.png" alt="Details Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/details.png" alt="Details Page" width="400" />
+
+<br>
 
 ### ➕ Add Listing Page  
-<img src="screenshots/add.png" alt="Add Listing" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/add.png" alt="Add Listing" width="400" />
+
+<br>
 
 ### ✏️ Edit Listing Page  
-<img src="screenshots/edit.png" alt="Edit Listing" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/edit.png" alt="Edit Listing" width="400" />
+
+<br>
 
 ### 🔐 Login Page  
-<img src="screenshots/login.png" alt="Login Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/login.png" alt="Login Page" width="400" />
+
+<br>
 
 ### 📝 Signup Page  
-<img src="screenshots/signup.png" alt="Signup Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/signup.png" alt="Signup Page" width="400" />
+
+<br>
 
 ### 🌍 Location Page  
-<img src="screenshots/location.png" alt="Location Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/location.png" alt="Location Page" width="400" />
+
+<br>
 
 ### 🗑️ Delete Confirmation  
-<img src="screenshots/delete.png" alt="Delete Confirmation" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/delete.png" alt="Delete Confirmation" width="400" />
+
+<br>
 
 ### 💬 Feedback Page  
-<img src="screenshots/feedback.png" alt="Feedback Page" width="400" style="margin-bottom: 20px;" />
+<img src="screenshots/feedback.png" alt="Feedback Page" width="400" />
+
+<br>
+
+
 
 
 ---
