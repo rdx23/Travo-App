@@ -23,35 +23,34 @@
 Below are the screenshots of all main pages:
 
 ### 🏠 Home Page
-![Home Page](screenshots/home.png)
+<img src="screenshots/home.png" alt="Home Page" width="400"/>
 
 ### 📋 Listings Page
-![Listings Page](screenshots/listings.png)
+<img src="screenshots/listings.png" alt="Listings Page" width="400"/>
 
 ### 🧾 Details Page
-![Details Page](screenshots/detail.png)
+<img src="screenshots/details.png" alt="Details Page" width="400"/>
 
 ### ➕ Add Listing Page
-![Add Listing](screenshots/add.png)
+<img src="screenshots/add.png" alt="Add Listing" width="400"/>
 
 ### ✏️ Edit Listing Page
-![Edit Listing](screenshots/edit.png)
-
-### 🌍 Location Page
-![Location Page](screenshots/location.png)
-
-### 🗑️ Delete Confirmation
-![Delete Confirmation](screenshots/delete.png)
-
-### 💬 Feedback Page
-![Feedback Page](screenshots/feedback.png)
+<img src="screenshots/edit.png" alt="Edit Listing" width="400"/>
 
 ### 🔐 Login Page
-![Login Page](screenshots/login.png)
+<img src="screenshots/login.png" alt="Login Page" width="400"/>
 
 ### 📝 Signup Page
-![Signup Page](screenshots/signup.png)
+<img src="screenshots/signup.png" alt="Signup Page" width="400"/>
 
+### 🌍 Location Page
+<img src="screenshots/location.png" alt="Location Page" width="400"/>
+
+### 🗑️ Delete Confirmation
+<img src="screenshots/delete.png" alt="Delete Confirmation" width="400"/>
+
+### 💬 Feedback Page
+<img src="screenshots/feedback.png" alt="Feedback Page" width="400"/>
 
 ---
 
