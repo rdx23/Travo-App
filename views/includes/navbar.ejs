@@ -1,17 +1,13 @@
 <style>
-  .btn-search{
+  .btn-search {
     text-align: center;
     font-size: 0.8rem;
     padding: 0.5rem 3rem 0.5rem 3rem;
   }
-
-
- 
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid position-relative">
-
     <!-- Left Section: Logo & Brand Name -->
     <div class="d-flex align-items-center">
       <a class="navbar-brand me-0" href="/">
@@ -23,36 +19,52 @@
     </div>
 
     <!-- Search Bar Centered -->
-<div class="position-absolute start-50 translate-middle-x">
-  <form class="d-flex align-items-center" action="/listings" method="GET">
-    <input class="form-control me-2 rounded-pill btn-search" 
-           type="search" 
-           name="search"  
-           placeholder="Search Destinations" 
-           aria-label="Search"
-             value="<%= typeof search !== 'undefined' ? search : '' %>"> 
-    <button class="btn btn-outline-dark rounded-pill d-flex align-items-center px-3 py-1" type="submit">
-      <i class="fa-solid fa-magnifying-glass me-2"></i> Search
-    </button>
-  </form>
-</div>
-
+    <div class="position-absolute start-50 translate-middle-x">
+      <form class="d-flex align-items-center" action="/listings" method="GET">
+        <input
+          class="form-control me-2 rounded-pill btn-search"
+          type="search"
+          name="search"
+          placeholder="Search Destinations"
+          aria-label="Search"
+          value="<%= typeof search !== 'undefined' ? search : '' %>"
+        />
+        <button
+          class="btn btn-outline-dark rounded-pill d-flex align-items-center px-3 py-1"
+          type="submit"
+        >
+          <i class="fa-solid fa-magnifying-glass me-2"></i> Search
+        </button>
+      </form>
+    </div>
 
     <!-- Right Section: Buttons -->
     <div class="navbar-nav ms-auto">
-      <a class="nav-link list-property-btn rounded-pill mx-2 px-4 py-2 fw-medium border-0" href="/listings/new">
+      <a
+        class="nav-link list-property-btn rounded-pill mx-2 px-4 py-2 fw-medium border-0"
+        href="/listings/new"
+      >
         List Your Property
       </a>
 
       <% if (!currUser) { %>
-        <a class="nav-link btn btn-dark bg-black text-white rounded-pill mx-2 px-4 py-2 fw-medium border-0" href="/signup">Sign up</a>
-        <a class="nav-link bg-black text-white rounded-pill mx-2 px-4 py-2 fw-medium border-0" href="/login">Log in</a>
-      <% } %>
-
-      <% if (currUser) { %>
-        <a class="nav-link bg-black text-white rounded-pill mx-2 px-4 py-2 fw-medium border-0" href="/logout">Log out</a>
+      <a
+        class="nav-link btn btn-dark bg-black text-white rounded-pill mx-2 px-4 py-2 fw-medium border-0"
+        href="/signup"
+        >Sign up</a
+      >
+      <a
+        class="nav-link bg-black text-white rounded-pill mx-2 px-4 py-2 fw-medium border-0"
+        href="/login"
+        >Log in</a
+      >
+      <% } %> <% if (currUser) { %>
+      <a
+        class="nav-link bg-black text-white rounded-pill mx-2 px-4 py-2 fw-medium border-0"
+        href="/logout"
+        >Log out</a
+      >
       <% } %>
     </div>
-
   </div>
 </nav>
