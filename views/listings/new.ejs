@@ -97,19 +97,20 @@
             <div class="invalid-feedback">Location should be valid</div> 
           </div>
 
-          <div class="mb-3">
-            <label for="category" class="form-label fw-bold">Category</label>
-            <select class="form-select" id="rating"  required>
-                <option value="" disabled selected>Select Category</option>
-                <option value="1">1 - Beach</option>
-                <option value="2">2 - Mountain</option>
-                <option value="3">3 - City</option>
-                <option value="4">4 - Forest</option>
-                <option value="5">5 - Lake</option>  
-               <option value="6">6 - Castle</option> 
-            </select>
-            <div class="invalid-feedback">Please enter your category.</div>
-        </div>
+       <div class="mb-3">
+  <label for="category" class="form-label fw-bold">Category</label>
+  <select class="form-select" id="category" name="listing[category]" required>
+    <option value="" disabled <%= !listing.category ? 'selected' : '' %>>Select Category</option>
+    <option value="1" <%= listing.category == "1" ? "selected" : "" %>>1 - Beach</option>
+    <option value="2" <%= listing.category == "2" ? "selected" : "" %>>2 - Mountain</option>
+    <option value="3" <%= listing.category == "3" ? "selected" : "" %>>3 - City</option>
+    <option value="4" <%= listing.category == "4" ? "selected" : "" %>>4 - Forest</option>
+    <option value="5" <%= listing.category == "5" ? "selected" : "" %>>5 - Lake</option>
+    <option value="6" <%= listing.category == "6" ? "selected" : "" %>>6 - Castle</option>
+  </select>
+  <div class="invalid-feedback">Please enter your category.</div>
+</div>
+
 
           <button type="submit" class="btn btn-dark w-100 py-2 shadow-sm mt-3">🏨 Add Hotel</button>
         </form>
