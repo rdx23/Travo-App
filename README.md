@@ -33,7 +33,7 @@ Below are the screenshots of all main pages:
 <br>
 
 ### 🧾 Details Page  
-<img src="screenshots/details.png" alt="Details Page" width="400" />
+<img src="screenshots/detail.png" alt="Details Page" width="400" />
 
 <br>
 
