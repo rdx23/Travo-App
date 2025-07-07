@@ -88,9 +88,4 @@ Below are the screenshots of all main pages:
 
 ---
 
-## ⚙️ Getting Started
 
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/yourusername/travo.git
-   cd travo
