@@ -89,7 +89,7 @@ Below are the screenshots of all main pages:
 
 ---
 
-##🔗 Live Application
-🌐 Click here to explore Travo
+🔗 **Live Application**  
+🌐 [Click here to explore Travo](https://travo-app.onrender.com)
 
 
